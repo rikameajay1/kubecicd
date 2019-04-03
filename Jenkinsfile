@@ -19,6 +19,6 @@ node {
         }
          
         stage('Draft connect') { 
-            sh "draft connect"
+            //sh "draft connect"
         }
   }
