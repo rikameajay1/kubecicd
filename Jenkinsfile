@@ -1,6 +1,5 @@
-pipeline {
-  agent any
-  environment {
+node {
+    environment {
         PATH = '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/var/lib/snapd/snap/bin:/root/bin'
         KUBECONFIG = '/etc/kubernetes/admin.conf'
     }
@@ -17,6 +16,7 @@ pipeline {
         sh "draft create"
       }
     }
+ 				
     stage('Draft up') {
       withDockerRegistry(credentialsId: 'docker-hub', url: 'docker.io/ajayr5') {
         steps {
