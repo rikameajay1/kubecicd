@@ -1,12 +1,7 @@
 pipeline {
-  agent {
-    node {
-      label 'draft'
-    }
-
-  }
+  agent any
   stages {
-    stage('') {
+    stage('error') {
       steps {
         sh '''whoami
 pwd
