@@ -12,5 +12,11 @@ pipeline {
         sh "/usr/local/bin/draft create"
       }
     }
+    stage('Draft up') {
+      steps {
+        sh "echo Created Dockerfile"
+        sh "/usr/local/bin/draft up"
+      }
+    }
   }
 }
