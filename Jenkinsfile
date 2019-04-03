@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('init') {
       steps {
-        sh "draft config set registry $Registry"
+        sh "/usr/local/bin/draft config set registry $Registry"
         sh "/usr/local/bin/draft init"
       }
     }
