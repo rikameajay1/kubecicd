@@ -19,8 +19,10 @@ pipeline {
     }
     stage('Draft up') {
       steps {
+        withDockerRegistry(credentialsId: 'docker-hub') {
         sh "echo Starting pod"
         sh "draft up"
+        }
       }
     }
   }
