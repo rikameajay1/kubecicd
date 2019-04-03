@@ -4,7 +4,7 @@ pipeline {
     stage('error') {
       steps {
         sh '''echo $PATH
-draft init'''
+/usr/local/bin/draft init'''
       }
     }
   }
