@@ -3,8 +3,7 @@ pipeline {
   stages {
     stage('error') {
       steps {
-        sh '''whoami
-pwd
+        sh '''echo $PATH
 draft init'''
       }
     }
