@@ -1,10 +1,14 @@
 pipeline {
   agent any
   stages {
-    stage('error') {
+    stage('Draft init') {
       steps {
-        sh '''echo $PATH
-/usr/local/bin/draft init'''
+        sh "/usr/local/bin/draft init"
+      }
+    }
+    stage('Draft create') {
+      steps {
+        sh "/usr/local/bin/draft create"
       }
     }
   }
