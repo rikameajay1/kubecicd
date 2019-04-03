@@ -1,9 +1,10 @@
 pipeline {
   agent any
   stages {
-    stage('Draft init') {
+    stage('init') {
       steps {
-        sh "/usr/local/bin/draft init"
+        sh '''/usr/local/bin/draft init
+              /usr/local/bin/helm init'''
       }
     }
     stage('Draft create') {
