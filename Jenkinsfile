@@ -4,7 +4,7 @@ pipeline {
     stage('init') {
       steps {
         sh '''/usr/local/bin/draft init
-              /usr/local/bin/helm init'''
+              /usr/local/bin/helm status'''
       }
     }
     stage('Draft create') {
