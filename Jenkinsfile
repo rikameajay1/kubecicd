@@ -12,7 +12,7 @@ node {
         }
  				
         stage('Draft up') {
-            withDockerRegistry(credentialsId: 'docker-hub', url: 'docker.io/ajayr5') {
+            withCredentials([usernamePassword(credentialsId: 'docker-hub', usernameVariable: 'ajayr5', passwordVariable: '78Q6wa3s0%')]) {
                 sh "echo Starting pod"
                 sh "draft up"
             }
