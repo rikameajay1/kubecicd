@@ -3,10 +3,7 @@ pipeline {
   stages {
     stage('init') {
       steps {
-        sh '''/usr/local/bin/draft init
-              whoami
-              pwd
-              /usr/local/bin/helm status'''
+        sh "/usr/local/bin/draft init"
       }
     }
     stage('Draft create') {
