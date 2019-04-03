@@ -1,10 +1,13 @@
 pipeline {
   agent any
+  environment {
+        PATH = '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/var/lib/snapd/snap/bin:/root/bin'
+    }
   stages {
     stage('init') {
       steps {
-        sh "/usr/local/bin/draft config set registry $Registry"
-        sh "/usr/local/bin/draft init"
+        sh "draft config set registry $Registry"
+        sh "draft init"
       }
     }
     stage('Draft create') {
