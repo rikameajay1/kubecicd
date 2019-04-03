@@ -5,24 +5,18 @@ node {
     }
   
     stage('init') {
-      steps {
         sh "draft config set registry $Registry"
         sh "draft init"
-      }
     }
     stage('Draft create') {
-      steps {
         sh "echo Created Dockerfile"
         sh "draft create"
-      }
     }
  				
     stage('Draft up') {
       withDockerRegistry(credentialsId: 'docker-hub', url: 'docker.io/ajayr5') {
-        steps {
           sh "echo Starting pod"
           sh "draft up"
-        }
       }
     }
   
