@@ -18,9 +18,11 @@ pipeline {
       }
     }
     stage('Draft up') {
-        withDockerRegistry(credentialsId: 'docker-hub', url: 'docker.io/ajayr5') {
-        sh "echo Starting pod"
-        sh "draft up"
+      withDockerRegistry(credentialsId: 'docker-hub', url: 'docker.io/ajayr5') {
+        steps {
+          sh "echo Starting pod"
+          sh "draft up"
+        }
       }
     }
   }
