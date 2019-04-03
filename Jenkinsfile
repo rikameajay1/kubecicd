@@ -17,4 +17,8 @@ node {
                 sh "draft up"
             }
         }
+         
+        stage('Draft connect') { 
+            sh "draft connect"
+        }
   }
